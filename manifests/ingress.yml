@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "azakscluster2"
+    labels:
+        app: "azakscluster2"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: azakscluster2d840-azakscluster2.04eed289c9a74e92aeb8.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "azakscluster2"
+                servicePort: 8080
