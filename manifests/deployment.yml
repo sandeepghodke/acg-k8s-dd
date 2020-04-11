@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "azakscluster2"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "azakscluster2"
+    spec:
+      containers:
+        - name: "azakscluster2"
+          image: "azakscontainerregistry.azurecr.io/azakscluster2"
+          ports:
+          - containerPort: 8080
